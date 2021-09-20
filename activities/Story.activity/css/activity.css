@@ -72,6 +72,22 @@ p {
 	border-radius: 5.5px;
 }
 
+#spinner-container {
+	position: absolute;
+	height: 90vh;
+	width: 100vw;
+	background-color: white;
+	z-index: 2;
+}
+
+#spinner {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	width: 8%;
+}
+
 /* Buttons added */
 
 #main-toolbar #grid-mode {
@@ -89,8 +105,26 @@ p {
 #main-toolbar #format-text-button {
 	background-image: url(../icons/format-text.svg);
 }
+#main-toolbar #size-palette {
+	z-index: 5;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
 #main-toolbar #font-button {
 	background-image: url(../icons/font-text.svg);
+}
+#main-toolbar #export-sound {
+	background-image: url(../icons/save-sound.svg);
+}
+#main-toolbar #export-palette {
+	background-image: url(../icons/file-export.svg);
+}
+#main-toolbar #help-button {
+	background-image: url(../icons/help.svg);
+}
+.palette .wrapper {
+    min-width: 10px;
+    padding: 5px;
 }
 /* Format text palette */
 #format-text-buttons {
@@ -124,6 +158,58 @@ p {
 #font-buttons .palette-item img {
 	width: 40px;
 	height: 40px;
+}
+/* Size Palette */
+#size-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3px;	
+}
+#size-buttons button {
+	background-color: transparent;
+	border: none;
+}
+#size-buttons button:hover {
+	background-color: #808080;
+	border-radius: 1px !important;
+}
+#size-buttons .palette-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#size-buttons .palette-item img {
+	width: 40px;
+	height: 40px;
+	padding: 3px;
+	margin-right: 5px;
+}
+
+/* Export Palette */
+#export-buttons {
+	display: flex;
+	align-items: center;
+	margin: 3px;	
+}
+#export-buttons button {
+	background-color: transparent;
+	border: none;
+}
+#export-buttons button:hover {
+	background-color: #808080;
+	border-radius: 1px !important;
+}
+#export-buttons .palette-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#export-buttons .palette-item img {
+	width: 40px;
+	height: 40px;
+	padding: 3px;
+	margin-right: 5px;
 }
 /* Color Palette */
 .colorpalette {
@@ -233,27 +319,27 @@ p {
 
 #previous-btn {
 	background-image: url(../icons/go-previous.svg);
-	width: 30px;
-	height: 30px;
-	background-size: 30px 30px;
+	width: 50px;
+	height: 50px;
+	background-size: 50px 50px;
 }
 #previous-btn-inactive {
 	background-image: url(../icons/go-previous-inactive.svg);
-	width: 30px;
-	height: 30px;
-	background-size: 30px 30px;
+	width: 50px;
+	height: 50px;
+	background-size: 50px 50px;
 }
 #next-btn {
 	background-image: url(../icons/go-next.svg);
-	width: 30px;
-	height: 30px;
-	background-size: 30px 30px;
+	width: 50px;
+	height: 50px;
+	background-size: 50px 50px;
 }
 #next-btn-inactive {
 	background-image: url(../icons/go-next-inactive.svg);
-	width: 30px;
-	height: 30px;
-	background-size: 30px 30px;
+	width: 50px;
+	height: 50px;
+	background-size: 50px 50px;
 }
 
 /* Editor Styling */
@@ -298,6 +384,18 @@ p {
 	height: 40px;
 	background-size: 40px 40px;
 }
+#stop-play {
+	background-image: url(../icons/stop-play.svg);
+	width: 40px;
+	height: 40px;
+	background-size: 40px 40px;
+}
+#pause-play {
+	background-image: url(../icons/pause-play.svg);
+	width: 40px;
+	height: 40px;
+	background-size: 40px 40px;
+}
 #play-inactive {
 	background-image: url(../icons/play-inactive.svg);
 	width: 40px;
@@ -315,6 +413,15 @@ p {
 	width: 40px;
 	height: 40px;
 	background-size: 40px 40px;
+}
+#playIconFlex {
+	display: flex;
+	width: 90px;
+	justify-content: space-between;
+}
+/* Edit cursor font size */
+.ql-cursor .ql-cursor-flag {
+	font-size: 16px;
 }
 /* Font Styling */
 
@@ -352,4 +459,75 @@ p {
 	#editor-area  {
 		max-width: 80vw;
 	}
+	.grid-image img {
+		height: 55px;
+		width: 55px;
+	}
+	#editor {
+		height: 100px;
+	}
+	#display-grid {
+		grid-template-columns: repeat(3, 50px);
+		grid-auto-rows: 50px;
+	}
+	#display-single {
+		height: 170px;
+		width: 170px;
+	}
+	#display-single img {
+		height: 170px;
+		width: 170px;
+	}
+	#record {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#record-start {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#play {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#play-inactive {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#stop-play {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#pause-play {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#playIconFlex {
+		width: 55px;
+	}
+	#speak {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#speak-inactive {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+	#format-text-button {
+		display: none;
+	}
+	#font-button {
+		display: none;
+	}
+	#export-buttons {
+		flex-direction: column;
+	}	
 }
